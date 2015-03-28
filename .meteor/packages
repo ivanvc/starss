@@ -5,5 +5,9 @@
 # but you can also edit it by hand.
 
 meteor-platform
-autopublish
-insecure
+coffeescript
+mquandalle:jade
+iron:router
+tap:i18n
+
+semantic:ui-css
