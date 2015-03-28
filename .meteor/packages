@@ -9,5 +9,6 @@ coffeescript
 mquandalle:jade
 iron:router
 tap:i18n
+momentjs:moment
 
 semantic:ui-css

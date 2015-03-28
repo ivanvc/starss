@@ -1,3 +1,3 @@
 Template.feedItem.helpers
   lastFetch: ->
-    @lastFetchAt.toString()
+    moment(@lastFetchAt).format 'lll'
