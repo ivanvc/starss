@@ -1,0 +1,6 @@
+template(name='header')
+  nav.ui.fixed.menu.navbar
+    a.brand.item(href='/') StringeRT
+    a.item(href="{{pathFor 'feedsList'}}")
+      i.feed.icon
+      | {{_ 'feeds'}}
