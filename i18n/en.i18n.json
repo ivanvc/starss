@@ -1,4 +1,10 @@
 {
   // Navigation
-  "feeds": "Feeds"
+  "feeds": "Feeds",
+  "addFeed": "Add Feed",
+
+  // Feed submit
+  "feedSubmitTitle": "Add Feed",
+  "feedSubmitURL": "Feed URL",
+  "feedSubmitButton": "Add"
 }

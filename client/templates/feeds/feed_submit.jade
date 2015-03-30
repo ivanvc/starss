@@ -1,0 +1,7 @@
+template(name='feedSubmit')
+  h2 {{_ 'feedSubmitTitle'}}
+  form.ui.form
+    .field
+      label(for='url') {{_ 'feedSubmitURL'}}
+      input#url(name='url' type='text')
+    input.ui.submit.button(type='submit' value="{{_ 'feedSubmitButton'}}")

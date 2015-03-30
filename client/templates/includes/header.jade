@@ -4,3 +4,6 @@ template(name='header')
     a.item(href="{{pathFor 'feedsList'}}")
       i.feed.icon
       | {{_ 'feeds'}}
+    a.item(href="{{pathFor 'feedSubmit'}}")
+      i.add.square.icon
+      | {{_ 'addFeed'}}

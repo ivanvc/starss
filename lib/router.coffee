@@ -4,3 +4,6 @@ Router.configure
 Router.route '/feeds',
   name: 'feedsList'
   waitOn: -> Meteor.subscribe('feeds')
+
+Router.route '/feeds/new',
+  name: 'feedSubmit'
