@@ -1,0 +1,1 @@
+FeedDiscover = this.FeedDiscover;

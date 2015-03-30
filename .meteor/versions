@@ -51,6 +51,7 @@ semantic:ui-css@1.11.6
 session@1.1.0
 spacebars@1.0.6
 spacebars-compiler@1.0.5
+stringert-feed-discover@1.0.5
 tap:i18n@1.4.1
 templating@1.1.0
 tracker@1.0.6
