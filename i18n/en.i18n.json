@@ -1,10 +1,13 @@
 {
   // Navigation
-  "feeds": "Feeds",
-  "addFeed": "Add Feed",
+  "navigation_feeds": "Feeds",
+  "navigation_add_feed": "Add Feed",
 
   // Feed submit
-  "feedSubmitTitle": "Add Feed",
-  "feedSubmitURL": "Feed URL",
-  "feedSubmitButton": "Add"
+  "feed_submit_title": "Add Feed",
+  "feed_submit_url": "Feed URL",
+  "feed_submit_button": "Add",
+
+  // Feeds collection
+  "feed_errors_missing_url": "Please fill in a URL"
 }
