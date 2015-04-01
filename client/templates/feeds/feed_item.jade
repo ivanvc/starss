@@ -1,6 +1,6 @@
 template(name='feedItem')
   .item
     .right.floated.date {{lastFetch}}
-    .left.floated.ui.star.rating
-      i.icon
+    .left.floated
+      i.small.thin.circle.icon(class=statusColor)
     .name {{name}}
