@@ -5,12 +5,11 @@ Package.describe({
 });
 
 Npm.depends({
-  'feed-discover': '1.0.5',
-  'request': '2.54.0'
+  cheerio: '0.19.0'
 });
 
 Package.on_use(function(api) {
-  api.use('coffeescript', 'server');
+  api.use(['coffeescript', 'http'], 'server');
   api.add_files(['feed_discover.coffee', 'global_variables.js'], 'server');
   api.export('FeedDiscover');
 });
