@@ -14,3 +14,4 @@ momentjs:moment
 semantic:ui-css
 stringert-feed-discover
 http
+percolate:synced-cron

@@ -1,0 +1,2 @@
+Meteor.startup ->
+  SyncedCron.start()
