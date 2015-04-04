@@ -1,4 +1,4 @@
-cheerio = Npm.require('cheerio')
+Cheerio = Npm.require('cheerio')
 
 FEED_SELECTORS = [
   'link[type*=rss]'
@@ -12,7 +12,7 @@ fetch = (url) ->
   unless response.statusCode is 200
     return error: 'http', statusCode: response.statusCode
 
-  $ = cheerio.load(response.content)
+  $ = Cheerio.load(response.content)
   if response.headers['content-type'].match('text/xml') and $('rss').length
     return processRSS(url, $)
   processHTML $
