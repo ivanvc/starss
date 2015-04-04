@@ -5,9 +5,19 @@
 
   // Feed submit
   "feed_submit_title": "Add Feed",
-  "feed_submit_url": "Feed URL",
   "feed_submit_button": "Add",
 
-  // Feeds collection
-  "feed_errors_missing_url": "Please fill in a URL"
+  // Feed edit
+  "feed_edit_title": "Edit Feed",
+  "feed_edit_button": "Save",
+
+  // Feed errors
+  "feed_errors_missing_url": "Please fill in a URL",
+
+  // Feed item
+  "feed_item_edit": "Edit",
+
+  // Feed form
+  "feed_url": "URL",
+  "feed_name": "Name"
 }

@@ -2,6 +2,6 @@ template(name='feedSubmit')
   h2 {{_ 'feed_submit_title'}}
   form.ui.form
     .field
-      label(for='url') {{_ 'feed_submit_url'}}
-      input#url(name='url' type='text')
+      label(for='url') {{_ 'feed_url'}}
+      input#url(name='url' type='url')
     input.ui.submit.button(type='submit' value="{{_ 'feed_submit_button'}}")
