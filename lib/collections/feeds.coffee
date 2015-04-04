@@ -1,5 +1,8 @@
 @Feeds = new Meteor.Collection('feeds')
 
+@Feeds.allow
+  remove: -> true
+
 Meteor.methods
   feedInsert: (feedAttributes) ->
     check feedAttributes.url, String

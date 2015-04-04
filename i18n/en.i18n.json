@@ -16,6 +16,9 @@
 
   // Feed item
   "feed_item_edit": "Edit",
+  "feed_item_last_fetch": "Last fetched at: %s",
+  "feed_item_delete": "Delete",
+  "feed_item_confirm_delete": "Delete this feed?",
 
   // Feed form
   "feed_url": "URL",
