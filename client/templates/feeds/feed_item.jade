@@ -1,11 +1,14 @@
 template(name='feedItem')
   .item
     .right.floated
-      a.ui.compact.basic.small.button(href="{{pathFor 'feedEdit'}}")
+      {{_ 'feed_item_last_fetch' lastFetch}}
+      a.ui.compact.tiny.basic.button(href="{{pathFor 'feedEdit'}}")
         {{_ 'feed_item_edit'}}
-      button.ui.compact.small.red.inverted.button.delete
+      button.ui.compact.tiny.red.inverted.button.delete
         {{_ 'feed_item_delete'}}
     .left.floated
       i.small.thin.circle.icon(class=statusColor)
-    .header #{name}
-    .description {{_ 'feed_item_last_fetch' lastFetch}}
+    .content.aligned
+      {{name}} -
+      small
+        a(href=url target='_new') {{url}}
