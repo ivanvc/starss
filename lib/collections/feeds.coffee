@@ -19,3 +19,12 @@ Meteor.methods
       _.extend feed, remoteAttributes
 
     _id: Feeds.insert(feed)
+
+  feedUpdate: (id, feedAttributes) ->
+    check(feedAttributes.url, String) if feedAttributes.hasOwnProperty('url')
+    check(feedAttributes.name, String) if feedAttributes.hasOwnProperty('name')
+
+    if Meteor.isServer and feedAttributes.hasOwnProperty('url')
+      feedAttributes.url = FeedDiscover.fetch(feedAttributes.url).url
+
+    success: Feeds.update(id, { $set: feedAttributes })

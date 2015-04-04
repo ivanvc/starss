@@ -7,3 +7,8 @@ Router.route '/feeds',
 
 Router.route '/feeds/new',
   name: 'feedSubmit'
+
+Router.route '/feeds/:_id/edit',
+  name: 'feedEdit'
+  waitOn: -> Meteor.subscribe('singleFeed', @params._id)
+  data: -> Feeds.findOne(@params._id)

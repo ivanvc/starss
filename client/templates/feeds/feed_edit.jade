@@ -1,0 +1,10 @@
+template(name='feedEdit')
+  h2 {{_ 'feed_edit_title'}}
+  form.ui.form
+    .field
+      label(for='name') {{_ 'feed_name'}}
+      input#uname(name='name' type='text' value=name)
+    .field
+      label(for='url') {{_ 'feed_url'}}
+      input#url(name='url' type='url' value=url)
+    input.ui.submit.button(type='submit' value="{{_ 'feed_edit_button'}}")
