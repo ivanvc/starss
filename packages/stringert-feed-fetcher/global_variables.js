@@ -1,0 +1,1 @@
+FeedFetcher = this.FeedFetcher;
