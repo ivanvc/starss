@@ -9,7 +9,10 @@ Npm.depends({
 });
 
 Package.on_use(function(api) {
-  api.use(['coffeescript', 'http'], 'server');
-  api.add_files(['feed_fetcher.coffee', 'global_variables.js'], 'server');
+  api.use(['coffeescript', 'http', 'percolate:synced-cron'], 'server');
+  api.add_files(
+    ['feed_fetcher.coffee', 'cron.coffee', 'global_variables.js'],
+    'server'
+  );
   api.export('FeedFetcher');
 });

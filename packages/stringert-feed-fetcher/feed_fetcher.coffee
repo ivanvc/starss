@@ -17,3 +17,7 @@ FeedParser = Npm.require('feedparser')
   updateFeed: (properties) ->
     properties.lastFetchAt = new Date()
     Feeds.update @feed._id, $set: properties
+
+@FeedFetcher.fetchAll = ->
+  for feed in Feeds.find().fetch()
+    new FeedFetcher(feed).fetch()
