@@ -15,3 +15,4 @@ semantic:ui-css
 stringert-feed-discover
 http
 percolate:synced-cron
+stringert-feed-fetcher

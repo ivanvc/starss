@@ -53,6 +53,7 @@ session@1.1.0
 spacebars@1.0.6
 spacebars-compiler@1.0.6
 stringert-feed-discover@1.0.5
+stringert-feed-fetcher@1.0.0
 tap:i18n@1.4.1
 templating@1.1.1
 tracker@1.0.7
