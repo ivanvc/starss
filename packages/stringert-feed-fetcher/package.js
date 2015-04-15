@@ -5,11 +5,13 @@ Package.describe({
 });
 
 Npm.depends({
-  feedparser: '1.0.0'
+  feedparser: '1.0.0',
+  request: '2.55.0',
+  fibers: '1.0.5'
 });
 
 Package.on_use(function(api) {
-  api.use(['coffeescript', 'http', 'percolate:synced-cron'], 'server');
+  api.use(['coffeescript', 'percolate:synced-cron'], 'server');
   api.add_files(
     ['feed_fetcher.coffee', 'cron.coffee', 'global_variables.js'],
     'server'
