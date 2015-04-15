@@ -5,6 +5,7 @@ Fiber      = Npm.require('fibers')
 @FeedFetcher = class FeedFetcher
   constructor: (@feed) ->
     that = @
+    @lastFetchAt = @feed.lastFetchAt
     @feedParser = new FeedParser()
     @feedParser.on 'error', => new Fiber(=> @setError(error)).run()
     @feedParser.on 'readable', ->
@@ -36,7 +37,9 @@ Fiber      = Npm.require('fibers')
     ).run()
 
   processStory: (story) ->
-    return if Stories.findOne(feedId: @feed._id, guid: story.guid)
+    if Stories.findOne(feedId: @feed._id, guid: story.guid) or
+      story.pubdate < @lastFetchAt
+        return
     Stories.insert
       title: story.title
       pubDate: story.pubdate
