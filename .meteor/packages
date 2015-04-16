@@ -12,7 +12,8 @@ tap:i18n
 momentjs:moment
 
 semantic:ui-css
-stringert-feed-discover
 http
 percolate:synced-cron
-stringert-feed-fetcher
+
+starss-feed-fetcher
+starss-feed-discover

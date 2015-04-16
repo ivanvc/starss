@@ -1,5 +1,5 @@
 Package.describe({
-  name: 'stringert-feed-fetcher',
+  name: 'starss-feed-fetcher',
   version: '1.0.0',
   summary: 'A module for automatic RSS/Atom feed discovery.'
 });
