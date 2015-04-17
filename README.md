@@ -1,3 +1,3 @@
 # starss
 
-Starss is an RSS reader, based on Stringer, but real time.
+Starss is a RSS reader, inspired by Stringer, but real time.
