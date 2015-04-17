@@ -1,4 +1,4 @@
-.preview {
+.preview-text {
   opacity: 0.3;
 }
 
@@ -9,4 +9,24 @@
 
 .feed-name {
   overflow: hidden;
+}
+
+.story {
+  cursor: pointer;
+}
+
+.story.preview .preview-text {
+  display: inline !important;
+}
+
+.story.preview .full-text {
+  display: none !important;
+}
+
+.story.current .preview-text {
+  visibility: hidden !important;
+}
+
+.story.current .full-text {
+  display: inline-block !important;
 }
