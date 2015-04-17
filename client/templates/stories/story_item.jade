@@ -1,8 +1,8 @@
 template(name='storyItem')
   .item
-    i.small.thin.star.icon(class=isFaved)
+    i.top.aligned.star.icon(class=isFaved)
     .content
-      .header
-        {{feedName}} - {{title}}
-      .description
-        {{{description}}}
+      {{feedName}} –
+      strong {{title}}
+      .description.preview
+        {{{previewText}}}
