@@ -4,3 +4,6 @@ Meteor.publish 'feeds', ->
 Meteor.publish 'singleFeed', (id) ->
   check id, String
   Feeds.find id
+
+Meteor.publish 'stories', ->
+  Stories.find {}
