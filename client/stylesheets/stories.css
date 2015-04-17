@@ -1,9 +1,3 @@
 .preview {
-  white-space: nowrap;
-  overflow: hidden;
   opacity: 0.5;
-}
-
-.list {
-  overflow: hidden;
 }
