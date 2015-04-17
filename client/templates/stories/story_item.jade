@@ -1,11 +1,10 @@
 template(name='storyItem')
-  .one.column.row
-    .column
-      .ui.grid
-        .three.wide.column
-          i.top.aligned.star.icon(class=isFaved)
-          {{feedName}}
-        .thirteen.wide.column
-          strong {{title}}
-          span.preview
-            — {{{previewText}}}
+  .ui.segment.secondary.preview-story
+    .ui.grid
+      .three.wide.column.feed-name
+        i.top.aligned.star.icon(class=isFaved)
+        {{feedName}}
+      .thirteen.wide.column
+        strong {{title}}
+        span.preview
+          — {{{previewText}}}
