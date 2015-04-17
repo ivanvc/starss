@@ -1,6 +1,9 @@
 template(name='header')
   nav.ui.fixed.menu.navbar
-    a.brand.item(href='/') StringeRT
+    a.brand.item(href='/') sta#[strong rss]
+    a.item(href="{{pathFor 'storiesList'}}")
+      i.newspaper.icon
+      | {{_ 'navigation_stories'}}
     a.item(href="{{pathFor 'feedsList'}}")
       i.feed.icon
       | {{_ 'navigation_feeds'}}
