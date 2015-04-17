@@ -13,8 +13,9 @@ Meteor.methods
       unreadCount: 0
       lastError: ''
       lastUpdateAt: new Date()
-      lastFetchAt: new Date()
+      lastFetchAt: new Date(0)
       createdAt: new Date()
+      firstFetch: true
 
     if Meteor.isServer
       # TODO: Handle errors, and dups
