@@ -11,18 +11,23 @@ Template.storyItem.helpers
     UniHTML.purify @description,
       withoutTags: BLACKLISTED_TAGS, noFormatting: true
 
+hideStory = ($target) ->
+  window.location.hash = ''
+  $target.removeClass('primary current').addClass 'secondary preview'
+
+showStory = ($target, storyId) ->
+  window.location.hash = $target.prop('id')
+  $('.stories .story').removeClass('primary current').
+    addClass 'secondary preview'
+  $target.removeClass('secondary preview').addClass 'primary current'
+  Meteor.call 'readStory', storyId, (error, result) ->
+    console.log(error) if error
+
 Template.storyItem.events
-  'click .current.story': (e) ->
+  'click .story-title': (e) ->
     e.preventDefault()
-    $target = $(e.currentTarget)
-    window.location.hash = ''
-    $target.removeClass('primary current').addClass 'secondary preview'
-
-  'click .preview.story': (e) ->
-    e.preventDefault()
-    $target = $(e.currentTarget)
-
-    window.location.hash = $target.prop('id')
-    $('.stories .story').removeClass('primary current').
-      addClass 'secondary preview'
-    $target.removeClass('secondary preview').addClass 'primary current'
+    $target = $(e.currentTarget).parents('.story')
+    if $target.hasClass('current')
+      hideStory $target
+    else
+      showStory $target, @_id

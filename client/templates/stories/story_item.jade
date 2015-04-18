@@ -1,10 +1,10 @@
 template(name='storyItem')
   .ui.segment.secondary.story.preview(id=_id)
     .ui.grid
-      .three.wide.column.feed-name
+      .three.wide.column.feed-name.story-title
         i.top.aligned.star.icon(class=isFaved)
         {{feedName}}
-      .thirteen.wide.column.preview-story
+      .thirteen.wide.column.preview-story.story-title
         strong {{title}}
         span.preview-text
           — {{{previewText}}}
