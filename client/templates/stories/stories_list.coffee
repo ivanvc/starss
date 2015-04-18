@@ -1,3 +1,4 @@
 Template.storiesList.helpers
   stories: ->
-    Stories.find { readAt: null }, sort: { pubDate: 1 }
+    query = { $or: [{ readAt: null }, { readAt: { $gt: new Date() } }] }
+    Stories.find query, sort: { pubDate: 1 }
