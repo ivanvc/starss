@@ -12,11 +12,17 @@ Template.storyItem.helpers
       withoutTags: BLACKLISTED_TAGS, noFormatting: true
 
 Template.storyItem.events
-  'click .secondary.story': (e) ->
-    $target = $(e.currentTarget)
+  'click .current.story': (e) ->
     e.preventDefault()
+    $target = $(e.currentTarget)
+    window.location.hash = ''
+    $target.removeClass('primary current').addClass 'secondary preview'
 
+  'click .preview.story': (e) ->
+    e.preventDefault()
+    $target = $(e.currentTarget)
+
+    window.location.hash = $target.prop('id')
     $('.stories .story').removeClass('primary current').
       addClass 'secondary preview'
-
     $target.removeClass('secondary preview').addClass 'primary current'
