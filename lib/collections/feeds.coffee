@@ -31,4 +31,4 @@ Meteor.methods
     if Meteor.isServer and feedAttributes.hasOwnProperty('url')
       feedAttributes.url = FeedDiscover.fetch(feedAttributes.url).url
 
-    success: Feeds.update(id, { $set: feedAttributes })
+    success: Feeds.update(id, $set: feedAttributes)
