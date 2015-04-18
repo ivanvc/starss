@@ -56,3 +56,4 @@ Fiber      = Npm.require('fibers')
 @FeedFetcher.fetchAll = ->
   for feed in Feeds.find().fetch()
     new FeedFetcher(feed).fetch()
+  true
