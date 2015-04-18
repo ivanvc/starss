@@ -2,7 +2,8 @@ template(name='storyItem')
   .ui.segment.secondary.story.preview(id=_id)
     .ui.grid
       .three.wide.column.feed-name.story-title
-        i.top.aligned.star.icon(class=isFaved)
+        .ui.star.rating(data-rating=isFaved data-id=_id)
+          i.icon
         {{feedName}}
       .thirteen.wide.column.preview-story.story-title
         strong {{title}}
