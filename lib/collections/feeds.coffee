@@ -8,7 +8,7 @@ Meteor.methods
     check feedAttributes.url, String
 
     feed = _.extend feedAttributes,
-      name: url
+      name: feedAttributes.url
       status: 'unknown'
       unreadCount: 0
       lastError: ''
