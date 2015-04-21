@@ -4,13 +4,13 @@ Router.configure
 @StoriesController = RouteController.extend
   template: 'storiesList'
   subscriptions: ->
-    @postsSub = Meteor.subscribe 'stories', @findOptions
+    @storiesSub = Meteor.subscribe('stories', @findOptions(), sort: @sort)
     null
   stories: ->
     Stories.find @findOptions(), sort: @sort
   data: ->
     stories: @stories()
-    ready: @postsSub.ready
+    ready: @storiesSub.ready
 
 @NewStoriesController = @StoriesController.extend
   findOptions: ->
