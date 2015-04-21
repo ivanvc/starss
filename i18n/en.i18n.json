@@ -24,5 +24,8 @@
 
   // Feed form
   "feed_url": "URL",
-  "feed_name": "Name"
+  "feed_name": "Name",
+
+  // Story item
+  "story_item_follow": "Open"
 }

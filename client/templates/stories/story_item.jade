@@ -11,3 +11,9 @@ template(name='storyItem')
           — {{{previewText}}}
       .sixteen.wide.column.full-text
         {{{description}}}
+      .thirteen.wide.column.full-text
+        {{formattedPubDate}}
+      .three.wide.column.full-text
+        a.ui.basic.button(href=link target='_blank')
+          i.external.icon
+          {{_ 'story_item_follow'}}
