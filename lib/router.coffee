@@ -1,9 +1,35 @@
 Router.configure
   layoutTemplate: 'layout'
 
+@StoriesController = RouteController.extend
+  template: 'storiesList'
+  subscriptions: ->
+    @postsSub = Meteor.subscribe 'stories', @findOptions
+    null
+  stories: ->
+    Stories.find @findOptions(), sort: @sort
+  data: ->
+    stories: @stories()
+    ready: @postsSub.ready
+
+@NewStoriesController = @StoriesController.extend
+  findOptions: ->
+    { $or: [{ readAt: null }, { readAt: { $gt: new Date() } }] }
+  sort:
+    pubDate: 1
+
+@StarredStoriesController = @StoriesController.extend
+  findOptions: ->
+    favedAt: { $not: null }
+  sort:
+    favedAt: 1
+
 Router.route '/',
-  name: 'storiesList'
-  waitOn: -> Meteor.subscribe('stories')
+  name: 'home'
+  controller: @NewStoriesController
+
+Router.route '/starred',
+  name: 'starredStories'
 
 Router.route '/feeds',
   name: 'feedsList'
