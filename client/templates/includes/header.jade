@@ -1,15 +1,15 @@
 template(name='header')
-  nav.ui.fixed.menu.navbar
+  nav.ui.menu.navbar
     a.brand.item(href='/') sta#[strong rss]
     a.item(href="{{pathFor 'home'}}")
       i.newspaper.icon
-      | {{_ 'navigation_stories'}}
+      {{_ 'navigation_stories'}}
     a.item(href="{{pathFor 'starredStories'}}")
       i.star.icon
-      | {{_ 'navigation_starred'}}
+      {{_ 'navigation_starred'}}
     a.item(href="{{pathFor 'feedsList'}}")
       i.feed.icon
-      | {{_ 'navigation_feeds'}}
+      {{_ 'navigation_feeds'}}
     a.item(href="{{pathFor 'feedSubmit'}}")
       i.add.square.icon
-      | {{_ 'navigation_add_feed'}}
+      {{_ 'navigation_add_feed'}}
