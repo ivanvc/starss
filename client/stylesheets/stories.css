@@ -30,3 +30,7 @@
 .story.current .full-text {
   display: inline-block !important;
 }
+
+.story .full-text img {
+  max-width: 100%;
+}
