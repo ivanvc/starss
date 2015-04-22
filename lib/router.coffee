@@ -20,7 +20,7 @@ Router.configure
 
 @StarredStoriesController = @StoriesController.extend
   findOptions: ->
-    favedAt: { $not: null }
+    favedAt: { $ne: null }
   sort:
     favedAt: 1
 
