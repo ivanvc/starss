@@ -15,11 +15,12 @@ showStory = ($target, storyId) ->
     console.log(error) if error
 
 Template.storyItem.onRendered ->
-  $('.ui.rating').rating
+  $('.ui.rating', $(@firstNode)).rating
     clearable: true
     onRate: (rate) ->
       Meteor.call 'favStory', @dataset.id, rate, (error, result) ->
         console.log(error) if error
+  $('.full-text a', $(@firstNode)).prop 'target', '_blank'
 
 Template.storyItem.helpers
   formattedPubDate: ->
