@@ -5,13 +5,13 @@ BLACKLISTED_TAGS = ['b', 'i', 'strong', 'em', 'blockquote', 'ol', 'ul', 'li',
 @StoryItem =
   hideStory: ($target) ->
     window.location.hash = ''
-    $target.removeClass('primary current').addClass 'secondary preview'
+    $target.removeClass('raised current').addClass 'preview'
 
   showStory: ($target) ->
     window.location.hash = $target.prop('id')
-    $('.stories .story').removeClass('primary current').
+    $('.stories .story').removeClass('raised current').
       addClass 'secondary preview'
-    $target.removeClass('secondary preview').addClass 'primary current'
+    $target.removeClass('secondary preview').addClass 'raised current'
     Meteor.call 'readStory', $target.prop('id'), (error, result) ->
       console.log(error) if error
 
@@ -31,6 +31,12 @@ Template.storyItem.helpers
   previewText: ->
     UniHTML.purify @description,
       withoutTags: BLACKLISTED_TAGS, noFormatting: true
+  cssClass: ->
+    switch
+      when window.location.hash.substr(1) is @_id then 'raised'
+      when !@readAt then 'primary'
+      when @favedAt and @readAt then 'secondary'
+      when @readAt then 'tertiary'
 
 Template.storyItem.events
   'click .story-title': (e) =>
