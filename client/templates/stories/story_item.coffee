@@ -33,10 +33,10 @@ Template.storyItem.helpers
       withoutTags: BLACKLISTED_TAGS, noFormatting: true
   cssClass: ->
     switch
-      when window.location.hash.substr(1) is @_id then 'raised'
-      when !@readAt then 'primary'
-      when @favedAt and @readAt then 'secondary'
-      when @readAt then 'tertiary'
+      when window.location.hash.substr(1) is @_id then return 'raised'
+      when !@readAt then return 'primary'
+      when @favedAt and @readAt then return 'secondary'
+      when @readAt then return 'tertiary'
 
 Template.storyItem.events
   'click .story-title': (e) =>
