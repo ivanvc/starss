@@ -16,7 +16,7 @@ Router.configure
   findOptions: ->
     { $or: [{ readAt: null }, { readAt: { $gt: new Date() } }] }
   sort:
-    pubDate: 1
+    createdAt: 1
 
 @StarredStoriesController = @StoriesController.extend
   findOptions: ->
