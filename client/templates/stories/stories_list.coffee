@@ -13,7 +13,7 @@ Template.storiesList.onRendered ->
     return unless $('.story').length
     hash = window.location.hash
     $previousStory = $(".story#{hash}").prev()
-    $previousStory = $('.story').first() unless $previousStory.length
+    $previousStory = $('.story').last() unless $previousStory.length
     StoryItem.showStory $previousStory
 
   key 'esc', 'storiesList', ->
