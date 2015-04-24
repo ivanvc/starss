@@ -11,9 +11,13 @@ template(name='storyItem')
           — {{{previewText}}}
       .sixteen.wide.column.full-text
         {{{description}}}
-      .thirteen.wide.column.full-text
+      .twelve.wide.column.full-text
         {{formattedPubDate}}
-      .three.wide.column.full-text
+      .four.wide.column.full-text
+        .ui.checkbox
+          input.keep-unread(type='checkbox' checked=keepUnread id=keepUnreadId)
+          label(for=keepUnreadId)
+            {{_ 'story_item_keep_unread'}}
         a.ui.basic.button.story-link(href=link target='_blank')
           i.external.icon
           {{_ 'story_item_follow'}}

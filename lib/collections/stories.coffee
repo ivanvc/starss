@@ -7,3 +7,8 @@ Meteor.methods
   favStory: (id, faved) ->
     date = faved && new Date() || null
     success: Stories.update(id, $set: { favedAt: date })
+
+  keepUnread: (id, keepUnread) ->
+    props = keepUnread: keepUnread
+    props.readAt = if keepUnread then null else new Date()
+    success: Stories.update(id, $set: props)

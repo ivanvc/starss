@@ -27,5 +27,6 @@
   "feed_name": "Name",
 
   // Story item
-  "story_item_follow": "Open"
+  "story_item_follow": "Open",
+  "story_item_keep_unread": "Keep unread"
 }
