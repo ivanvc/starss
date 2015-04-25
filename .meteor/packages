@@ -19,3 +19,6 @@ starss-feed-fetcher
 starss-feed-discover
 vazco:universe-html-purifier
 keymaster:keymaster
+
+accounts-ui-unstyled
+accounts-password
