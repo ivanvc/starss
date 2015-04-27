@@ -15,10 +15,14 @@ Fiber      = Npm.require('fibers')
 
   fetch: ->
     that = @
-    request = Request(@feed.url)
+    request = Request(
+      uri: @feed.url
+      headers: { 'If-Modified-Since': @lastFetchAt.toString() }
+    )
     request.on 'error', Meteor.bindEnvironment (error) =>
       @setError(error)
     request.on 'response', (response) ->
+      return that.clearError() if response.statusCode is 304
       unless response.statusCode is 200
         return that.setError("[#{response.statusCode}] #{response.content}")
       that.clearError()
@@ -37,9 +41,8 @@ Fiber      = Npm.require('fibers')
     ).run()
 
   processStory: (story) ->
-    if Stories.findOne(feedId: @feed._id, guid: story.guid) or
-      story.pubdate < @lastFetchAt
-        return
+    if Stories.findOne(feedId: @feed._id, guid: story.guid)
+      return
     Stories.insert
       title: story.title
       pubDate: story.pubdate
